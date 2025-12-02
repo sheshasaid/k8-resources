@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pod-Config
+data:
+  course: "DevSecOps with AWS"
+  duration: "120hrs"
+  trainer: "Sivakumar"
+  
