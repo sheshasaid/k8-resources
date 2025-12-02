@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    project: robpshop
+    component: frontend
+    environments: dev
+  ports:
+    - protocol: TCP
+    port: 80
+    targetport: 
