@@ -1,15 +1,25 @@
 apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeport-pod
+  labels:
+    app: nodeport-app
+spec:
+  containers:
+    - name: mycontainer
+      image: nginx
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
 kind: Service
 metadata:
-  name: service-np-demo
+  name: nodeport-service
 spec:
   type: NodePort
   selector:
-    project: roboshop
-    component: frontend
-    environment: dev
-    purpose: node-port
+    app: nodeport-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetport: 80
+    - port: 80
+      targetPort: 80      # ✔ FIXED (camelCase)
+      nodePort: 30080
