@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-np-demo
+spec:
+  type: NodePort
+  selector:
+    project: roboshop
+    component: frontend
+    environment: dev
+    purpose: node-port
+  ports:
+    - protocol: TCP
+      port: 80
+      targetport: 80
