@@ -9,5 +9,5 @@ spec:
     environments: dev
   ports:
     - protocol: TCP
-    port: 80
-    targetport: 
+      port: 80
+      targetport: 
