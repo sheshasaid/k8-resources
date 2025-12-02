@@ -22,4 +22,4 @@ spec:
   ports:
     - port: 80
       targetPort: 80      # ✔ FIXED (camelCase)
-      nodePort: 30080
+      nodePort: 30081
